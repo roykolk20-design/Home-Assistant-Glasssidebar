@@ -18,7 +18,7 @@
       secFloat: ["Placement", ""],
       secSize: ["Size and blur", ""], secDensity: ["Spacing", "How much room each page gets."],
       secShadow: ["Shadow", "How far the panel lifts off the page."], secExtra: ["Extras", ""],
-      soft: "soft", vividShort: "vivid", sample: "Overview",
+      soft: "soft", vividShort: "vivid", sample: "Overview", sample2: "Energy",
       styleTitle: "Choose a style", styleIntro: "Start from a style and fine-tune it under Shape & glass.",
       chosen: "Chosen", yourStyles: "Your styles", saveStyle: "Save current settings as a style",
       styleName: "Name of the style", save: "Save", remove: "Remove",
@@ -82,7 +82,7 @@
       secFloat: ["Plaats", ""],
       secSize: ["Formaat en vervaging", ""], secDensity: ["Ruimte", "Hoeveel plek elke pagina krijgt."],
       secShadow: ["Schaduw", "Hoe ver de balk boven de pagina zweeft."], secExtra: ["Extra", ""],
-      soft: "zacht", vividShort: "fel", sample: "Overzicht",
+      soft: "zacht", vividShort: "fel", sample: "Overzicht", sample2: "Energie",
       styleTitle: "Kies een stijl", styleIntro: "Begin met een stijl en pas daarna alles aan bij Vorm en glas.",
       chosen: "Gekozen", yourStyles: "Jouw stijlen", saveStyle: "Huidige instellingen als stijl bewaren",
       styleName: "Naam van de stijl", save: "Bewaren", remove: "Verwijderen",
@@ -684,7 +684,7 @@
           const checked = o.selected_shape === shape && o.highlight === highlight;
           combos.push(`<button type="button" class="choice" role="radio" aria-checked="${checked}" data-action="choose"
             data-values='${esc(JSON.stringify({ selected_shape: shape, highlight }))}' data-f="sel-${shape}-${highlight}">
-            <span class="demo"><span class="pill" style="${c.selected}">${esc(t.sample)}</span><span class="pill" style="color: #1C1F24">Energie</span></span>
+            <span class="demo"><span class="pill" style="${c.selected}">${esc(t.sample)}</span><span class="pill" style="color: #1C1F24">${esc(t.sample2)}</span></span>
             ${esc(t.shapes[shape])} · ${esc(highlight === "vivid" ? t.vividShort : t.soft)}</button>`);
         }
       }
