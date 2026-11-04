@@ -288,6 +288,12 @@ replaced.
 - Frontend tests load the scripts into the official Home Assistant demo with
   an installed Edge or Chrome: `cd tests/frontend && npm install && npm test`.
 
+## Support
+
+Glass Sidebar is free and open source. If it makes your Home Assistant nicer to use, you can buy me a coffee.
+
+[![Support me on Ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/kolkiesdesign)
+
 ## License
 
 [MIT](LICENSE)
