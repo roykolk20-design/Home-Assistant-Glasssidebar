@@ -1,5 +1,16 @@
 # Changelog
 
+## [1.8.2]
+
+### Fixed
+
+- The "Selected item" examples in the settings no longer show the Dutch word
+  "Energie" when Home Assistant is set to English.
+
+### Changed
+
+- The README images show the English interface.
+
 ## [1.8.1]
 
 ### Changed

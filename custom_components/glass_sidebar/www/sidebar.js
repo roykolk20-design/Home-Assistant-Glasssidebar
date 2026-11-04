@@ -3,7 +3,7 @@
   window.__glassSidebar = true;
 
   // Kept in step with VERSION in const.py; a newer server version shows a reload notice.
-  const scriptVersion = "1.8.1";
+  const scriptVersion = "1.8.2";
   const cacheKey = "glass-sidebar-config";
   const personalCacheKey = "glass-sidebar-personal";
   // Each person's own style, in Home Assistant's per-user frontend data.
