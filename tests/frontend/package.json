@@ -1,0 +1,11 @@
+{
+  "name": "glass-sidebar-frontend-tests",
+  "private": true,
+  "description": "Runs the Glass Sidebar scripts against the official Home Assistant demo in Edge or Chrome.",
+  "scripts": {
+    "test": "node sidebar.test.js"
+  },
+  "devDependencies": {
+    "playwright-core": "1.56.1"
+  }
+}

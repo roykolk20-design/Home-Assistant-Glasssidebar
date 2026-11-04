@@ -3,7 +3,7 @@
 # Glass Sidebar for Home Assistant
 
 [![HACS Custom](https://img.shields.io/badge/HACS-Custom-41BDF5.svg)](https://hacs.xyz/docs/faq/custom_repositories)
-![Version](https://img.shields.io/badge/version-1.8.0-03A9F4)
+![Version](https://img.shields.io/badge/version-1.8.1-03A9F4)
 ![Home Assistant](https://img.shields.io/badge/Home%20Assistant-2026.10%2B-18BCF2)
 
 A modern, glass-style sidebar for Home Assistant. It turns the left navigation
@@ -222,9 +222,12 @@ link to all settings. Changes are for you only; admins can switch to
 
 New versions are published as GitHub releases. HACS shows them under
 **Settings → Updates** like any other update, with the release notes. Install
-it there and restart Home Assistant when asked. Open browsers and the
-companion app reload themselves once to pick up the new version; there is no
-need to clear the cache.
+it there and restart Home Assistant when asked.
+
+Open browsers, wall tablets and the companion app keep running the version
+they loaded, so nothing is interrupted. They show a small notice, *A new
+version of Glass Sidebar is ready*, with a **Reload** button; reload whenever
+it suits you. There is no need to clear the cache.
 
 HACS never installs updates on its own. If you want that, create an
 automation that runs the `update.install` action on the Glass Sidebar update
@@ -276,6 +279,14 @@ shadow DOM and adds a stylesheet to it. Your options are sent to the browser
 over Home Assistant's websocket, so changes apply instantly. Categories use
 CSS `order` and extra headings. The sidebar's own elements are never moved or
 replaced.
+
+## Development
+
+- Backend tests run against a real Home Assistant core:
+  `pip install -r requirements_test.txt`, then `touch custom_components/__init__.py`
+  and `python -m pytest`. GitHub runs them on every push.
+- Frontend tests load the scripts into the official Home Assistant demo with
+  an installed Edge or Chrome: `cd tests/frontend && npm install && npm test`.
 
 ## License
 

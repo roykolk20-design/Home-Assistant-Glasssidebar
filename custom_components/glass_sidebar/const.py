@@ -1,7 +1,7 @@
 from typing import Any
 
 DOMAIN = "glass_sidebar"
-VERSION = "1.8.0"
+VERSION = "1.8.1"
 # Each person's own style lives in Home Assistant's per-user frontend data.
 USER_DATA_KEY = DOMAIN
 JS_PATH = f"/{DOMAIN}/sidebar.js"

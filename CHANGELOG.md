@@ -1,5 +1,18 @@
 # Changelog
 
+## [1.8.1]
+
+### Changed
+
+- **No automatic reload after an update.** Open browsers, wall tablets and the
+  companion app keep running the loaded version. Instead, Home Assistant shows
+  a notice that a new version of Glass Sidebar is ready, with a Reload button.
+
+### Added
+
+- Backend and frontend tests in the repository, and a workflow that runs the
+  backend tests on every push.
+
 ## [1.8.0]
 
 ### New

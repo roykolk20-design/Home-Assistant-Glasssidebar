@@ -2,9 +2,8 @@
   if (window.__glassSidebar) return;
   window.__glassSidebar = true;
 
-  // Kept in step with VERSION in const.py; a newer server version reloads the page.
-  const scriptVersion = "1.8.0";
-  const reloadKey = "glass-sidebar-reloaded-for";
+  // Kept in step with VERSION in const.py; a newer server version shows a reload notice.
+  const scriptVersion = "1.8.1";
   const cacheKey = "glass-sidebar-config";
   const personalCacheKey = "glass-sidebar-personal";
   // Each person's own style, in Home Assistant's per-user frontend data.
@@ -44,11 +43,13 @@
 
   const TEXT = {
     en: { quick: "Quick settings", style: "Style", floating: "Floating", vivid: "Vivid highlight",
+      newVersion: "A new version of Glass Sidebar is ready.", reload: "Reload",
       me: "Just me", everyone: "Everyone", useStandard: "Use the standard", following: "Following the standard",
       cards: "Glass cards", opacity: "Opacity", all: "All settings", close: "Close",
       presets: { frosted: "Frosted", midnight: "Midnight", vivid: "Vivid", aurora: "Aurora", ocean: "Ocean", sunset: "Sunset",
         forest: "Forest", rose: "Rose", graphite: "Graphite", mono: "Mono", minimal: "Minimal", solid: "Solid" } },
     nl: { quick: "Snel aanpassen", style: "Stijl", floating: "Zwevend", vivid: "Fel actief item",
+      newVersion: "Er is een nieuwe versie van Glass Sidebar klaar.", reload: "Herladen",
       me: "Alleen ik", everyone: "Iedereen", useStandard: "Standaard gebruiken", following: "Je volgt de standaard",
       cards: "Glazen kaarten", opacity: "Dekking", all: "Alle instellingen", close: "Sluiten",
       presets: { frosted: "Frosted", midnight: "Midnight", vivid: "Vivid", aurora: "Aurora", ocean: "Oceaan", sunset: "Zonsondergang",
@@ -1127,20 +1128,30 @@
     return readJson(cacheKey);
   }
 
-  // After an update the app often keeps the old page (and this old script)
-  // open. Reload once so the browser picks up the new version by itself.
-  function reloadForVersion(version) {
-    try {
-      if (sessionStorage.getItem(reloadKey) === version) return;
-      sessionStorage.setItem(reloadKey, version);
-    } catch (err) {
-      return; // Without storage we can't guard against reload loops.
-    }
-    location.reload();
+  // After an update the page keeps running this script until someone reloads.
+  // Never reload by ourselves: say so once, with a button, using HA's own toast.
+  let notifiedVersion = null;
+  function notifyNewVersion(version) {
+    if (notifiedVersion === version) return;
+    notifiedVersion = version;
+    const t = text();
+    document.querySelector("home-assistant")?.dispatchEvent(
+      new CustomEvent("hass-notification", {
+        bubbles: true,
+        composed: true,
+        detail: {
+          id: "glass-sidebar-update",
+          message: t.newVersion,
+          duration: -1,
+          dismissable: true,
+          action: { text: t.reload, action: () => location.reload() },
+        },
+      })
+    );
   }
 
   function setConfig(value) {
-    if (value?.version && value.version !== scriptVersion) reloadForVersion(value.version);
+    if (value?.version && value.version !== scriptVersion) notifyNewVersion(value.version);
     shared = value;
     config = merge();
     writeJson(cacheKey, value);
