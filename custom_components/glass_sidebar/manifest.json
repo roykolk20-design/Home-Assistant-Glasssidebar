@@ -4,9 +4,9 @@
   "codeowners": ["@roykolk20-design"],
   "config_flow": true,
   "dependencies": ["frontend", "http", "panel_custom", "websocket_api"],
-  "documentation": "https://github.com/roykolk20-design/Home-assistant-glasssidebar",
+  "documentation": "https://github.com/roykolk20-design/Home-Assistant-Glasssidebar",
   "integration_type": "service",
   "iot_class": "calculated",
-  "issue_tracker": "https://github.com/roykolk20-design/Home-assistant-glasssidebar/issues",
+  "issue_tracker": "https://github.com/roykolk20-design/Home-Assistant-Glasssidebar/issues",
   "version": "1.8.1"
 }

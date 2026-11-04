@@ -6,6 +6,13 @@
 ![Version](https://img.shields.io/badge/version-1.8.1-03A9F4)
 ![Home Assistant](https://img.shields.io/badge/Home%20Assistant-2026.10%2B-18BCF2)
 
+## ☕ Support my work
+
+Glass Sidebar is free and open source, made in my spare time. If it makes your Home Assistant nicer to use, a coffee helps me keep building.
+
+[![Support me on Ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/kolkiesdesign)
+
+
 A modern, glass-style sidebar for Home Assistant. It turns the left navigation
 into a floating panel with soft blur, rounded items and a clear highlight for
 the page you're on — and lets you group your panels into your own categories.
@@ -77,13 +84,13 @@ through HACS before, it carries over automatically and keeps getting updates.
 
 ### HACS (Home Assistant 2026.10 and older)
 
-[![Open your Home Assistant instance and open this repository in HACS.](https://my.home-assistant.io/badges/hacs_repository.svg)](https://my.home-assistant.io/redirect/hacs_repository/?owner=roykolk20-design&repository=Home-assistant-glasssidebar&category=integration)
+[![Open your Home Assistant instance and open this repository in HACS.](https://my.home-assistant.io/badges/hacs_repository.svg)](https://my.home-assistant.io/redirect/hacs_repository/?owner=roykolk20-design&repository=Home-Assistant-Glasssidebar&category=integration)
 
 Click the button above, or add it by hand:
 
 1. In Home Assistant, open **HACS**.
 2. Open the menu (⋮) in the top right and choose **Custom repositories**.
-3. Add `https://github.com/roykolk20-design/Home-assistant-glasssidebar` with
+3. Add `https://github.com/roykolk20-design/Home-Assistant-Glasssidebar` with
    type **Integration** (not *Theme* or *Dashboard*, those give a
    "repository structure is not compliant" error).
 4. Search for **Glass Sidebar** in HACS and download it.
@@ -239,7 +246,7 @@ entity when it turns on.
 - The sidebar is part of Home Assistant's frontend, which isn't a public API.
   A future frontend update can change the elements this plugin styles. If the
   sidebar suddenly looks like the default again after an update, please
-  [open an issue](https://github.com/roykolk20-design/Home-assistant-glasssidebar/issues).
+  [open an issue](https://github.com/roykolk20-design/Home-Assistant-Glasssidebar/issues).
 
 ## Troubleshooting
 
@@ -287,12 +294,6 @@ replaced.
   and `python -m pytest`. GitHub runs them on every push.
 - Frontend tests load the scripts into the official Home Assistant demo with
   an installed Edge or Chrome: `cd tests/frontend && npm install && npm test`.
-
-## Support
-
-Glass Sidebar is free and open source. If it makes your Home Assistant nicer to use, you can buy me a coffee.
-
-[![Support me on Ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/kolkiesdesign)
 
 ## License
 
