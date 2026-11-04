@@ -77,27 +77,26 @@ is configured entirely from the UI. No YAML, no extra frontend resources.
 ### Marketplace (Home Assistant 2026.11 and newer)
 
 From Home Assistant 2026.11, HACS is built in as the **Marketplace** under
-**Settings → Marketplace**. Search for **Glass Sidebar** there. If it isn't
-listed yet, add this repository as a custom repository with type
-**Integration**, the same way as described for HACS below. If you installed it
-through HACS before, it carries over automatically and keeps getting updates.
+**Settings → Marketplace**. Search for **Glass Sidebar** there and download it.
+If you installed it through HACS before, it carries over automatically and
+keeps getting updates.
 
 ### HACS (Home Assistant 2026.10 and older)
 
-[![Open your Home Assistant instance and open this repository in HACS.](https://my.home-assistant.io/badges/hacs_repository.svg)](https://my.home-assistant.io/redirect/hacs_repository/?owner=roykolk20-design&repository=Home-Assistant-Glasssidebar&category=integration)
-
-Click the button above, or add it by hand:
-
 1. In Home Assistant, open **HACS**.
-2. Open the menu (⋮) in the top right and choose **Custom repositories**.
-3. Add `https://github.com/roykolk20-design/Home-Assistant-Glasssidebar` with
-   type **Integration** (not *Theme* or *Dashboard*, those give a
-   "repository structure is not compliant" error).
-4. Search for **Glass Sidebar** in HACS and download it.
-5. Restart Home Assistant.
-6. Go to **Settings → Devices & services → Add integration** and choose
+2. Search for **Glass Sidebar** and download it.
+3. Restart Home Assistant.
+4. Go to **Settings → Devices & services → Add integration** and choose
    **Glass Sidebar**.
-7. Refresh your browser (Ctrl+F5 / Cmd+Shift+R).
+5. Refresh your browser (Ctrl+F5 / Cmd+Shift+R).
+
+[![Open your Home Assistant instance and show it in HACS.](https://my.home-assistant.io/badges/hacs_repository.svg)](https://my.home-assistant.io/redirect/hacs_repository/?owner=roykolk20-design&repository=Home-Assistant-Glasssidebar&category=integration)
+
+If it isn't listed yet, add it as a custom repository first: open the menu (⋮)
+in HACS, choose **Custom repositories**, and add
+`https://github.com/roykolk20-design/Home-Assistant-Glasssidebar` with type
+**Integration** (not *Theme* or *Dashboard*, those give a "repository
+structure is not compliant" error).
 
 ### Manual
 
